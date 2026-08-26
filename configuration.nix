@@ -54,14 +54,17 @@
     description = "zia";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
-    openssh.authorizedKeys.keys = [ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINXwzBlR/2qEohch3WjMe68WZkpl8N3zKtGLbDA408Vt cdwill@USS-Talon];
+    openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINXwzBlR/2qEohch3WjMe68WZkpl8N3zKtGLbDA408Vt cdwill@USS-Talon"];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    git
+    rsync
+    htop
+    fastfetch
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -82,7 +85,9 @@
   };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.allowedTCPPorts = [
+    22
+  ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
