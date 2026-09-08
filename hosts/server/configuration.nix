@@ -13,7 +13,7 @@
     ../../modules/common/timezone.nix
     ../../modules/common/base-packages.nix
     ../../modules/common/users.nix
-    ../../modules/common/swapfile.nix
+    ./swapfile.nix
     ../../modules/networking/dhcp.nix
     ../../modules/ssh/server-ssh.nix
     ../../modules/server/server-setup.nix
@@ -23,23 +23,6 @@
     device = "/nix/swapfile";
     size = 8 * 1024;  # 8 GB in MB
   }];
-
-  systemd.services.create-swapfile = {
-    description = "Create BTRFS swapfile";
-    wantedBy = [ "multi-user.target" ];
-    after = [ "local-fs.target" ];
-    path = [ pkgs.btrfsprogs ];
-    script = ''
-      if [ ! -f /nix/swapfile ]; then
-        btrfs filesystem mkswapfile --size 8g --uuid clear /nix/swapfile
-      fi
-    '';
-  };
-
-  # Make sure the swapfile has the right attributes (COW must be disabled for swap)
-  systemd.tmpfiles.rules = [
-    "f /nix/swapfile 0600 root root - - -"
-  ];
 
   # Hardware-specific settings for this server (bootloader, specific interfaces)
   # GRUB on UEFI — device = "nodev" tells GRUB to install to the mounted ESP
