@@ -13,6 +13,7 @@
     ../../modules/common/timezone.nix
     ../../modules/common/base-packages.nix
     ../../modules/common/users.nix
+    ../../modules/common/gc.nix
     ./swapfile.nix
     ../../modules/networking/dhcp.nix
     ../../modules/ssh/server-ssh.nix
