@@ -1,7 +1,7 @@
 # modules/server/server-setup.nix
 { ... }: {
   # Server-specific hardening
-  security = {
+  networking = {
     firewall.enable = true;
     # Allow SSH (or your custom port)
     firewall.allowedTCPPorts = [ 22 ];

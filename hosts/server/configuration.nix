@@ -33,7 +33,10 @@
     efiSupport = true;
     device = "nodev";
   };
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi = {
+    efiSysMountPoint = "/boot/efi";
+    canTouchEfiVariables = true;
+  };
   networking.interfaces.enp1s0.useDHCP = true;
 
   # NOTE: SSH host keys persist by default (generated once into stateful /etc/ssh);

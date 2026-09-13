@@ -3,7 +3,7 @@
     description = "Create BTRFS swapfile";
     wantedBy = [ "multi-user.target" ];
     after = [ "local-fs.target" ];
-    path = [ pkgs.btrfsprogs ];
+    path = [ pkgs.btrfs-progs ];
     script = ''
       if [ ! -f /nix/swapfile ]; then
         btrfs filesystem mkswapfile --size 8g --uuid clear /nix/swapfile
