@@ -9,7 +9,4 @@
     # firewall.allowedTCPPorts = [ 80 443 ];
   };
 
-  # Optional: automatic updates
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.allowReboot = false;
 }
