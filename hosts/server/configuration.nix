@@ -22,8 +22,8 @@
 
   ];
 
-  sops.age.keyFile = "/home/cdwill/.config/sops/age/keys.txt";
-  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.age.keyFile = "/var/lib/sops-nix/keys/keys.txt";
+  sops.defaultSopsFile = ../../secrets/secrets.yaml;
 
   # Hardware-specific settings for this server (bootloader, specific interfaces)
   # GRUB on UEFI — device = "nodev" tells GRUB to install to the mounted ESP
