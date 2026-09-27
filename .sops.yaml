@@ -1,0 +1,9 @@
+# .sops.yaml
+keys:
+  - &shared age1vrpxfvuwc3ntpyzp0d679tu78crln68nxcu56jfx8jknmg03zp8qq4a7y0  # the one shared age public key
+
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+      - age:
+          - *shared

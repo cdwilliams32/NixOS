@@ -20,9 +20,12 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sops-nix = { url = "github:Mic92/sops-nix"; inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, flake-parts, disko, ... }:
+  outputs = inputs@{ self, nixpkgs, flake-parts, sops-nix, disko, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       # Note: do NOT set allowUnfree here. `flake.nixpkgs` is not a valid flake-parts option.
       # The correct location is the NixOS module option `nixpkgs.config.allowUnfree = true;`
