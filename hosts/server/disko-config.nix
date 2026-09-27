@@ -35,6 +35,11 @@
                     mountpoint = "/nix";
                     mountOptions = [ "discard=async" "compress=zstd" "noatime" ];
                   };
+                  "swap" = {
+                    mountpoint = "/swap";
+                    mountOptions = [ "discard=async" "noatime" ];   # no compress — swapfile is NODATACOW anyway
+                    swap.swapfile.size = "8G";                       # creates /swap/swapfile
+                  };
                 };
               };
             };

@@ -17,8 +17,6 @@
     ../../modules/common/users.nix
     ../../modules/common/gc.nix
     ../../modules/common/auto-upgrade.nix
-    ./swapfile.nix
-    ../../modules/networking/dhcp.nix
     ../../modules/ssh/server-ssh.nix
     ../../modules/server/server-setup.nix
 
