@@ -1,5 +1,5 @@
 # modules/common/users.nix
-{ ... }: {
+{ config, ... }: {
   # Decrypt these to /run/secrets-for-users/ BEFORE users are created
   sops.secrets.user-password-hash.neededForUsers = true;
   sops.secrets.root-password-hash.neededForUsers = true;
