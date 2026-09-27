@@ -17,6 +17,7 @@
     ../../modules/common/users.nix
     ../../modules/common/gc.nix
     ../../modules/common/auto-upgrade.nix
+    ../../modules/common/git.nix
     ../../modules/ssh/server-ssh.nix
     ../../modules/server/server-setup.nix
 
