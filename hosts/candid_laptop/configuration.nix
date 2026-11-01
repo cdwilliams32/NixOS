@@ -39,6 +39,7 @@
     canTouchEfiVariables = true;
   };
   networking.interfaces.enp1s0.useDHCP = true;
+  networking.hostName = "candid_laptop";
 
   # NOTE: SSH host keys persist by default (generated once into stateful /etc/ssh);
   # no special handling is needed on a standard install.
