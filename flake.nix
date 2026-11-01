@@ -47,11 +47,11 @@
 
       # Define the hosts (NixOS systems) — the documented flake-parts pattern.
       # `flake.nixosConfigurations.<host>` is a standard flake output; each host imports
-      # its feature modules directly (see hosts/server/configuration.nix).
+      # its feature modules directly (see hosts/candid_laptop/configuration.nix).
       # Do NOT use `flake.devices` or `flake.modules.<name>` — those are not valid
       # flake-parts options unless you declare them as custom options first.
-      flake.nixosConfigurations.server = inputs.nixpkgs.lib.nixosSystem {
-        modules = [ ./hosts/server ];
+      flake.nixosConfigurations.candid_laptop = inputs.nixpkgs.lib.nixosSystem {
+        modules = [ ./hosts/candid_laptop ];
         specialArgs = { inherit inputs; };  # lets the host import inputs.disko.nixosModules.disko
       };
       # flake.nixosConfigurations.laptop = inputs.nixpkgs.lib.nixosSystem {
