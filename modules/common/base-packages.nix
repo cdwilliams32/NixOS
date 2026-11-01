@@ -4,5 +4,6 @@
     git
     rsync
     nano
+    fastfetch
   ];
 }
