@@ -14,7 +14,7 @@
     ../../modules/common/nix-settings.nix
     ../../modules/common/timezone.nix
     ../../modules/common/base-packages.nix
-    ../../modules/common/users.nix
+    ../../modules/users/server_users.nix
     ../../modules/common/gc.nix
     ../../modules/common/auto-upgrade.nix
     ../../modules/common/git.nix
